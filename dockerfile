@@ -1,24 +1,27 @@
-# Use Node.js base image
+# Base image
 FROM node:18-alpine
 
-# Install dependencies for MySQL and Redis
-RUN apk add --no-cache mysql mysql-client redis
+# Install bash, mysql, redis
+RUN apk add --no-cache bash mysql mysql-client redis
 
-# Create app directory
+# Set working directory
 WORKDIR /app
 
-# Copy app files
+# Copy package files
 COPY package.json package-lock.json ./
+
+# Install Node.js dependencies
 RUN npm install --legacy-peer-deps
 
+# Copy source code
 COPY . .
 
 # Expose ports
 EXPOSE 8080 3306 6379
 
-# Copy entrypoint script
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+# Add startup script
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
-# Start all services
-ENTRYPOINT ["docker-entrypoint.sh"]
+# Run startup script
+CMD ["/start.sh"]
