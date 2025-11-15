@@ -15,9 +15,7 @@ async function generateApiKey(req, res) {
   const rawKey = crypto.randomBytes(32).toString('hex');
   const apiKeyHash = hashKey(rawKey);
 
-  const expiresAt = expiresInDays
-    ? new Date(Date.now() + expiresInDays * 86400000)
-    : null;
+  const expiresAt = new Date(Date.now() + (expiresInDays || 30) * 24*60*60*1000);
 
   const rec = await ApiKey.create({
     appName,
