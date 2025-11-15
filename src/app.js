@@ -19,7 +19,6 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get('/', (req, res) => res.json({ status: 'ok' }));
 
-// sync DB in dev:
 if (process.env.NODE_ENV !== 'production') {
   sequelize.sync({ alter: true }).then(() => console.log('DB synced'));
 }

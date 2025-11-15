@@ -3,11 +3,11 @@ require('dotenv').config();
 module.exports = {
   port: process.env.PORT || 8080,
   db: {
-    username: process.env.POSTGRES_USER || 'postgres',
-    password: process.env.POSTGRES_PASSWORD || 'postgres',
-    database: process.env.POSTGRES_DB || 'analytics',
-    host: process.env.POSTGRES_HOST || 'db',
-    dialect: 'postgres'
+    username: process.env.MYSQL_USER || 'root',
+    password: process.env.MYSQL_PASSWORD || '1234',
+    database: process.env.MYSQL_DB || 'analytics',
+    host: process.env.MYSQL_HOST || 'db',
+    dialect: 'mysql'
   },
   redis: {
     url: process.env.REDIS_URL || 'redis://redis:6379'
