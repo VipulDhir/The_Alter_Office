@@ -1,17 +1,16 @@
 #!/bin/bash
+set -e
 
-# Start MySQL
-mysqld --initialize-insecure --user=root
-mysqld_safe &
+# Start MySQL in background
+mysqld_safe --datadir=/var/lib/mysql &
+echo "Waiting for MySQL to start..."
+sleep 15
 
-# Wait a few seconds for MySQL to be ready
-sleep 5
-
-# Create database if not exists
-mysql -uroot -e "CREATE DATABASE IF NOT EXISTS analytics;"
+# Initialize database if needed
+mysql -e "CREATE DATABASE IF NOT EXISTS analytics;"
 
 # Start Redis in background
 redis-server --daemonize yes
 
-# Start Node.js app
+# Start Node.js
 node src/server.js
