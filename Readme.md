@@ -17,8 +17,7 @@ This is a simple analytics platform for collecting events, generating API keys, 
    cd <your-repo-folder>
    npm install
 
-
-   Command to Run this Application : docker-compose up --build
+   Command to Run this : docker-compose up --build
    Note : Run Docker Desktop in Background
         : Put your mysql password in docker-compose file and .env file
 
