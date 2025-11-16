@@ -21,17 +21,19 @@ This is a simple analytics platform for collecting events, generating API keys, 
    npm install
 
 3. Enter Your MySQL Password in src/config file, docker-compose , .env
-
+   ```bash
    Command to Run this Application : docker-compose up --build
+
+   ```bash
    Note : Run Docker Desktop in Background
-        : Put your MySQL password in docker-compose file and .env file
 
 ### Running On Web
 1. Swagger URL
-  ```bash
-   http://18.207.167.3:8080/docs/
+     ```bash
+    http://18.207.167.3:8080/docs/
 
 2. Check the status of API'S
+   ```bash
    http://18.207.167.3:8080/
 
 
