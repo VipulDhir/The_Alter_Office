@@ -22,16 +22,15 @@ This is a simple analytics platform for collecting events, generating API keys, 
 
 3. Enter Your MySQL Password in src/config file, docker-compose , .env
    
-   Command to Run this Application :
+4. Run Docker Desktop in Background
+
+5. Command to Run this Application :
    
    ```bash
    docker-compose up --build
 
-   
-         Note : Run Docker Desktop in Background
-
 ### Running On Web
-1. Swagger URL
+1. Swagger URL (Open this link in Incognito mode because the extensions might cause an issue)
      ```bash
     http://18.207.167.3:8080/docs/
 
