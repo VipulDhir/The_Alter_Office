@@ -8,7 +8,7 @@ const options = {
       version: '1.0.0',
       description: 'API documentation for Analytics app',
     },
-    servers: [{ url: 'http://localhost:8080' }],
+    servers: [{ url: 'http://18.207.167.3:8080' }],
     components: {
       securitySchemes: {
         ApiKeyAuth: {

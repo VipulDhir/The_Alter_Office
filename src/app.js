@@ -9,15 +9,39 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./docs/swagger');
 
 const app = express();
-app.use(helmet());
+
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+    crossOriginOpenerPolicy: false,
+  })
+);
+
 app.use(morgan('combined'));
 app.use(bodyParser.json({ limit: '1mb' }));
 
+
 app.use('/api/auth', authRoutes);
 app.use('/api/analytics', analyticsRoutes);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+-
+app.use(
+  '/docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, {
+    swaggerOptions: {
+      url: "/swagger.json"
+    }
+  })
+);
+
+
+app.get('/swagger.json', (req, res) => {
+  res.json(swaggerSpec);
+});
 
 app.get('/', (req, res) => res.json({ status: 'ok' }));
+
 
 if (process.env.NODE_ENV !== 'production') {
   sequelize.sync({ alter: true }).then(() => console.log('DB synced'));

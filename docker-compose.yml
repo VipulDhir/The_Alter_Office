@@ -4,7 +4,7 @@ services:
     container_name: assignment-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: <PUT YOUR MYSQL PASSWORD>
+      MYSQL_ROOT_PASSWORD: < MYSQL PASSWORD >
       MYSQL_DATABASE: analytics
     ports:
       - "3306:3306"

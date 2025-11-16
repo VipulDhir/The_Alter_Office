@@ -8,17 +8,31 @@ This is a simple analytics platform for collecting events, generating API keys, 
 
 ### Prerequisites
 - Node.js and npm installed
-- Docker Desktop installed
+- Docker Desktop and Docker Compose installed
 
 ### Running Locally
 1. Clone the repository:
    ```bash
    git clone <your-repo-url>
    cd <your-repo-folder>
+
+2. Install Dependencies 
+   ```bash
    npm install
 
+3. Enter Your MySQL Password in src/config file, docker-compose , .env
 
    Command to Run this Application : docker-compose up --build
    Note : Run Docker Desktop in Background
         : Put your MySQL password in docker-compose file and .env file
+
+### Running On Web
+1. Swagger URL
+  ```bash
+   http://18.207.167.3:8080/docs/
+
+2. Check the status of API'S
+   http://18.207.167.3:8080/
+
+
 
