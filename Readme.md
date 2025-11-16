@@ -13,14 +13,14 @@ This is a simple analytics platform for collecting events, generating API keys, 
 ### Running Locally
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
-   cd <your-repo-folder>
+   git clone https://github.com/VipulDhir/The_Alter_Office.git
+   cd The_Alter_Office
 
-2. Install Dependencies 
+2. Install Dependencies :
    ```bash
    npm install
 
-3. Enter Your MySQL Password in src/config file, docker-compose , .env
+3. Enter Your MySQL Password in src/config file, docker-compose.yaml , .env
    
 4. Run Docker Desktop in Background
 
