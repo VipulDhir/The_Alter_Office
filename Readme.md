@@ -6,6 +6,8 @@ This is a simple analytics platform for collecting events, generating API keys, 
 
 ## Getting Started
 
+Used MySQL For databse and Redis For Caching
+
 ### Prerequisites
 - Node.js and npm installed
 - Docker Desktop and Docker Compose installed
